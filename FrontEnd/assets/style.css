@@ -31,6 +31,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+html{
+	background-color: #FFFEF8;
+}
 ol, ul {
 	list-style: none;
 }
@@ -124,6 +127,12 @@ li:hover {
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
+	order: -2;
+	margin-top: 139px;
+}
+#portfolio{
+	display: flex;
+	flex-direction: column;
 }
 .gallery {
 	width: 100%;
@@ -169,15 +178,16 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
+#contact input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
 	margin : 2em auto ;
 	width: 180px;
+	height: 36px;
 	text-align: center;
-	border-radius: 60px ;
+	border-radius: 60px;
 }
 
 footer nav ul {

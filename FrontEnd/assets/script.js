@@ -1,3 +1,5 @@
+
+//Fonction pour recevoir les données
 let works
 async function getData() {
 
@@ -19,12 +21,14 @@ async function getData() {
 
 getData();
 
+//Fonction pour générer les travaux 
 function generateWorks(works){
+    const gallery = document.querySelector(".gallery");
+    gallery.innerHTML = "";
         
     for (let i = 0; i < works.length; i++){
         const project = works[i];
 
-        const gallery = document.querySelector(".gallery");
         const figure = document.createElement("figure");
 
         const imgProjet = document.createElement("img");
@@ -43,12 +47,20 @@ function generateWorks(works){
 
 generateWorks(works);
 
-async function getCategories(works) {
+//Fonction pour générer les boutons filtre
+async function generateFiltersBtns(works) {
 
     const filterArray = [];
     const portfolio = document.getElementById("portfolio");
     const filterContainer = document.createElement("div");
     filterContainer.classList.add("filterContainer");
+
+    const allBtn = document.createElement("button");
+    allBtn.classList.add("filterBtn");
+    allBtn.innerText = "Tous";
+    allBtn.dataset.id = 123;
+
+    filterContainer.appendChild(allBtn);
 
     portfolio.appendChild(filterContainer)
 
@@ -57,23 +69,42 @@ async function getCategories(works) {
         const filterBtn = document.createElement("button");
         filterBtn.classList.add("filterBtn");
     
-        const category = works[i].category.name;
-        filterBtn.innerText = category;
+        const category = works[i].category.id;
+        filterBtn.innerText = works[i].category.name;
         
         if(filterArray.includes(category)){
             continue;
         } else {
-            filterArray.push(category)
+            filterArray.push(category);
+            filterBtn.dataset.id = works[i].category.id
         }
         
         filterContainer.appendChild(filterBtn);
-
-        filterBtn.addEventListener("click", function() {
-            const listWorkFiltered = works.filter(function (works){
-                return works.category.id = filterBtn.classList;
-            })
-        })
     }
+
+    const filterBtns = document.querySelectorAll(".filterBtn");
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener("click", filterSettings);
+  });
+
 }
 
-getCategories(works);
+generateFiltersBtns(works)
+
+
+function filterSettings(event) {
+    const categoryId = parseInt(event.target.dataset.id);
+
+    if (categoryId === 123){
+        generateWorks(works);
+    } else {
+        const filteredWorks = works.filter(function(work) {
+            return work.category.id === categoryId;
+    });
+
+    console.log(categoryId);
+    console.log(filteredWorks);
+
+    generateWorks(filteredWorks);
+    }
+}

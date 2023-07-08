@@ -37,6 +37,9 @@ html{
 ol, ul {
 	list-style: none;
 }
+button, input[type=submit]{
+	cursor: pointer;
+}
 blockquote, q {
 	quotes: none;
 }
@@ -100,6 +103,9 @@ nav li {
 
 li:hover {
 	color: #B1663C;
+}
+li:active {
+	font-weight: 600;
 }
 #introduction {
 	display: flex;
@@ -193,6 +199,30 @@ margin: auto;
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	margin: 2em
+    background-color: #FFF;
+    height: 60px;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+	color: inherit;
+}
+a:visited{
+	color: green;
+}
+a:active{
+	color: #000;
+}
+nav ul a:visited{
+    color: inherit;
+}
+nav ul a:hover{
+    color: #B1663C;
+}
+
+footer{
+	position: sticky;
+	bottom: 0;
 }
 

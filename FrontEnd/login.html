@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="./assets/style.css">
 	<link rel="stylesheet" href="./assets/login-style.css">
 	<link rel="stylesheet" href="./assets/dynamic-styles.css">
+	<script src="assets/login.js" defer></script>
 </head>
 <body class="no-scroll">
 <header>
@@ -29,10 +30,10 @@
         <h2>Log in</h2>
         <form action="">
             <label for="email">E-mail</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" autocomplete="email">
 
             <label for="password">Password</label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" autocomplete="current-password">
 
             <input type="submit" value="Se connecter">
         </form>

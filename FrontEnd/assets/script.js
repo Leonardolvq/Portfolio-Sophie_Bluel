@@ -1,4 +1,4 @@
-
+import {} from "./login.js"
 //Fonction pour recevoir les données
 let works
 async function getData() {

@@ -196,6 +196,14 @@ margin: auto;
 	border-radius: 60px;
 	margin-bottom: 50%;
 }
+#contact input[type="submit"]:hover,
+#login input[type="submit"]:hover{
+	background-color: #0E2F28;
+}
+#contact input[type="submit"]:hover,
+#login input[type="submit"]:hover{
+	background-color: #0E2F28;
+}
 
 footer nav ul {
 	display: flex;

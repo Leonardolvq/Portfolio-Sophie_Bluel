@@ -31,14 +31,8 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-html{
-	background-color: #FFFEF8;
-}
 ol, ul {
 	list-style: none;
-}
-button, input[type=submit]{
-	cursor: pointer;
 }
 blockquote, q {
 	quotes: none;
@@ -53,7 +47,8 @@ table {
 	border-spacing: 0;
 }
 /** end reset css**/
-body {
+body,
+.main_container {
 	max-width: 1140px;
 	margin:auto;
 	font-family: 'Work Sans' ;
@@ -104,9 +99,6 @@ nav li {
 li:hover {
 	color: #B1663C;
 }
-li:active {
-	font-weight: 600;
-}
 #introduction {
 	display: flex;
 	align-items: center;
@@ -133,12 +125,12 @@ li:active {
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
-	order: -2;
-	margin-top: 139px;
+	order: -1;
 }
 #portfolio{
 	display: flex;
 	flex-direction: column;
+	margin-top: 139px;
 }
 .gallery {
 	width: 100%;
@@ -154,7 +146,7 @@ li:active {
 }
 #contact {
 	width: 50%;
-margin: auto;
+	margin: auto;
 }
 #contact > * {
 	text-align: center;
@@ -184,7 +176,7 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-#contact input[type="submit"]{
+input[type="submit"]{
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -193,45 +185,46 @@ margin: auto;
 	width: 180px;
 	height: 36px;
 	text-align: center;
-	border-radius: 60px;
-	margin-bottom: 50%;
+	border-radius: 60px ;
 }
-#contact input[type="submit"]:hover,
-#login input[type="submit"]:hover{
-	background-color: #0E2F28;
+
+#contact input[type="submit"]{
+	height: 36px;
+	font-size: 1.2em;
 }
-#contact input[type="submit"]:hover,
-#login input[type="submit"]:hover{
-	background-color: #0E2F28;
+
+#contact input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
 }
 
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-    background-color: #FFF;
-    height: 60px;
-    width: 100%;
 }
 
+/*			ADD			*/
+
+html{
+	background-color: #FFFEF8;
+}
+button,
+.edit_btn,
+input[type=submit]{
+	cursor: pointer;
+}
+input[type="submit"]:hover{
+	background-color: #0E2F28;
+}
 a{
     text-decoration: none;
 	color: inherit;
 }
-a:visited{
-	color: green;
-}
-a:active{
-	color: #000;
-}
-nav ul a:visited{
-    color: inherit;
-}
-nav ul a:hover{
-    color: #B1663C;
-}
-
 footer{
-	position: sticky;
-	bottom: 0;
+	height: 60px;
+	background-color: #FFFEF8;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
-

@@ -1,3 +1,5 @@
+import { activateBackend, } from "./modale.js"
+
 //Fonction pour recevoir les données
 let works
 async function getData() {
@@ -107,3 +109,5 @@ function filterSettings(event) {
     generateWorks(filteredWorks);
     }
 }
+
+activateBackend();

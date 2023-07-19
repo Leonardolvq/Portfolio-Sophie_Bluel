@@ -5,9 +5,8 @@ async function validateForm(){
         event.preventDefault() 
             
         const identifiant = document.getElementById("email");
-        console.log(identifiant.value);
         const password = document.getElementById("password");
-        console.log(password.value);
+        
         const response = await fetch("http://localhost:5678/api/users/login", {
             method: 'POST',
             headers: {
@@ -20,17 +19,24 @@ async function validateForm(){
         })
         
         if (response.ok) {
-            let res = await response.json();
-            console.log("co");
-            console.log(`${res}`)
+            const res = await response.json();
+            const token = res.token;
+            console.log(JSON.stringify(res))
+
+            localStorage.setItem("token", token)
+            
             window.location.href = "index.html";
+            
+            const modale = document.querySelector(".modal")
+            if(token){
+                modale.classList.add('hide')
+            }
+            //localStorage.removeItem("token");
+
         } else {
             console.log("Erreur lors de la requête :", response.status);
-            //errorMessageElement.textContent = "Erreur dans l'identifiant ou le mot de passe.";
         }
-        
     })
-    
 }
 
 validateForm();
